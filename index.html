@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>boro ghor</title>
+    <meta
+      name="description"
+      content="boroghor.com — twitch dropout, ai sloplord, node operator. depression + decentralization. boroghor.eth, boroghor.sol"
+    />
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      input[type="text"]:hover,
+      input[type="text"]:focus {
+        border-color: #007bff;
+        outline: none;
+        transform: skew(-1deg);
+        transition: all 0.2s ease;
+      }
+
+      body {
+        font-family: "Tinos", "Times New Roman", serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 2em;
+        overflow-x: hidden;
+        background-color: #f5f5f5;
+        color: #333;
+        user-select: none;
+        text-transform: lowercase;
+        line-height: 1.5;
+      }
+
+      h2 {
+        font-size: 4vw;
+        font-weight: 700;
+        margin-bottom: 1em;
+        color: #333;
+        transition: color 1s ease;
+      }
+
+      h2:hover {
+        color: #ddd;
+      }
+
+      p {
+        font-size: 2vw;
+        margin-bottom: 2em;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      p:hover {
+        transform: skew(-10deg);
+        color: #007bff;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #0056b3;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 1em;
+        }
+
+        h2 {
+          font-size: 8vw;
+        }
+
+        p {
+          font-size: 4vw;
+        }
+
+        input[type="text"] {
+          font-size: 4vw !important;
+          padding-right: 5em !important;
+        }
+
+        #copyBtn {
+          font-size: 3.5vw !important;
+          padding: 0.2em 0.5em !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>📡 lightning node</h2>
+      <div style="position: relative; width: 100%; max-width: 100%">
+        <input
+          id="Key"
+          name="Key"
+          type="text"
+          value="02375fba2022199436f903f70edc6b2f3621175e5eea1b8c46ca8066fc7dcec988@azmxbsiin42co542odbcnoq3du4egewtr32aawobup3wg57pulyd5cid.onion:9735"
+          readonly
+          style="
+            width: 100%;
+            padding: 0.5em 4.5em 0.5em 0.5em;
+            font-size: 1.8vw;
+            font-family: 'Tinos', serif;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0.3em;
+            color: #333;
+            box-sizing: border-box;
+          "
+        />
+        <button
+          id="copyBtn"
+          aria-label="copy lightning node pubkey"
+          style="
+            position: absolute;
+            right: 0.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Tinos', serif;
+            font-size: 1.2vw;
+            background: #f5f5f5;
+            color: #333;
+            border: none;
+            border-radius: 0.2em;
+            padding: 0.3em 0.6em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+          "
+        >
+          copy
+        </button>
+      </div>
+      <h2>⚛️ atomiq exchange</h2>
+      <p>
+        <a href="https://app.atomiq.exchange/?affiliate=HSzBkJJ6mMBgDGZuB4TjwS">
+          trustless cross-chain swaps between Bitcoin and Solana
+        </a>
+      </p>
+
+      <h2>⚡ strike.me</h2>
+      <p>
+        <a href="https://invite.strike.me/C6WV1E"
+          >seamlessly buy bitcoin with lightning speed</a
+        >
+      </p>
+
+      <h2>🧾 blog</h2>
+      <p>
+        <a href="https://blog.boroghor.com">text posts and longer updates</a>
+      </p>
+
+      <h2>🥀 twitch</h2>
+      <p>
+        <a href="https://twitch.tv/borokhela">
+          will stream more when i beat depression
+        </a>
+      </p>
+
+      <h2>🖼️ $boroghor on zora</h2>
+      <p>
+        <a href="https://zora.co/@boroghor">gen ai slop posting</a>
+      </p>
+    </div>
+
+    <script>
+      const keyInput = document.getElementById("Key");
+      const copyBtn = document.getElementById("copyBtn");
+
+      copyBtn.addEventListener("click", () => {
+        keyInput.select();
+        keyInput.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+
+        copyBtn.textContent = "✅";
+        setTimeout(() => (copyBtn.textContent = "copy"), 1500);
+      });
+    </script>
+  </body>
+</html>
+<!-- you found the source. congrats. there's nothing here. -->
