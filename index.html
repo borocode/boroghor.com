@@ -169,19 +169,30 @@
       </p>
     </div>
 
-    <script>
-      const keyInput = document.getElementById("Key");
-      const copyBtn = document.getElementById("copyBtn");
+<script>
+  const keyInput = document.getElementById("Key");
+  const copyBtn = document.getElementById("copyBtn");
 
-      copyBtn.addEventListener("click", () => {
-        keyInput.select();
-        keyInput.setSelectionRange(0, 99999);
-        document.execCommand("copy");
+  // if user clicks input field, select all
+  keyInput.addEventListener("click", () => {
+    keyInput.select();
+  });
 
-        copyBtn.textContent = "✅";
-        setTimeout(() => (copyBtn.textContent = "copy"), 1500);
-      });
-    </script>
+  // if user clicks copy button, silently copy without flash
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(keyInput.value);
+      copyBtn.textContent = "✅";
+      setTimeout(() => (copyBtn.textContent = "copy"), 1500);
+    } catch (err) {
+      console.error("Clipboard copy failed", err);
+      copyBtn.textContent = "❌";
+      setTimeout(() => (copyBtn.textContent = "copy"), 1500);
+    }
+  });
+</script>
+
+
   </body>
 </html>
 <!-- you found the source. congrats. there's nothing here. fml. -->
